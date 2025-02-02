@@ -34,6 +34,22 @@ function askForNumber() {
 
       if (userGuess === randomNumber) {
         console.log(`¡Felicidades! Has acertado en ${attempts} intentos.`);
+
+        // Mensajes personalizados según el número de intentos
+        if (attempts === 1) {
+            console.log("🎰 Increíble, has acertado a la primera. ¡Deja el bootcamp y aplica este talento a la lotería!");
+        } else if (attempts <= 5) {
+            console.log("🔮 ¡Buena intuición! Se nota que eres de los que confían en su instinto.");
+        } else if (attempts <= 10) {
+            console.log("😉 Lo has hecho bien, aunque podrías mejorar un poco.");
+        } else if (attempts <= 15) {
+            console.log("😅 Bueno, lo importante es que lo lograste. ¡Sigue intentándolo!");
+        } else if (attempts <= 20) {
+            console.log("😎 Te ha costado, pero al final lo lograste. No te rindes, eso es bueno.");
+        } else {
+            console.log("👏😂 Esto se te da muy mal, pero aplaudo tu perseverancia.");
+        }
+
         rl.close(); 
         return;  
       }
