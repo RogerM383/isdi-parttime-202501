@@ -11,7 +11,7 @@ const randomNumber = Math.floor(Math.random() * 100) + 1;
 //contador de intentos
 let attempts = 0;
 
-console.log(randomNumber);
+// console.log(randomNumber);
 console.log("He pensado un número entre 1 y 100. ¡Intenta adivinarlo!");
 
 askForNumber()
@@ -52,6 +52,7 @@ function askForNumber() {
 
         rl.close(); 
         return;  
+
       }
 
       // Si no ha acertado, doy pistas
