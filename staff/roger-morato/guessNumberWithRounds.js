@@ -89,10 +89,23 @@ function showFinalResults(results) {
     🔥 Intentos totales: ${totalAttempts}
 
     ${finalMessage}
-
     ¡Gracias por jugar!`);
+    
+    playAgain();
 }
 
+/**
+ * This function checks if the user wants to play again and calls playGame in case the user wants to play.
+ */
+function playAgain() {
+    var restart = confirm("¿Quieres jugar otra vez?");
+
+    if (restart) {
+        playGame(); 
+    } else {
+        alert("¡Gracias por jugar! Hasta la próxima.");
+    }
+}
 
 function getFinalMessage(totalAttempts) {
     if (totalAttempts <= 3) {
