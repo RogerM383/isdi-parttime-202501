@@ -20,7 +20,7 @@ function playGame() {
 
         results.push(attempts); 
 
-        alert('¡Has completado la RONDA ${round} en ${attempts} intentos!');
+        alert(`¡Has completado la RONDA ${round} en ${attempts} intentos!`);
     }
 
     showFinalResults(results);
@@ -74,6 +74,7 @@ function guessNumber(round) {
  * 
  */
 function showFinalResults(results) {
+    var totalAttempts = 0;
     for (var i = 0; i < results.length; i++) {
         totalAttempts += results[i]; 
     }
