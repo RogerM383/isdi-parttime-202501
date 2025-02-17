@@ -1,0 +1,15 @@
+.game-container{
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choice-button{
+    background-color: darkslategray;
+    color: white;
+    padding: 15px 20px;
+    width: 120px;
+    font-size: 18px;
+    margin-top: 50px;
+    border-radius:10px;
+}
