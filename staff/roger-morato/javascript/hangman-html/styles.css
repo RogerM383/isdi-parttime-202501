@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Montserrat:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    background-color: #D4B996;
+    color: #5C4033;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    width: 450px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 3px solid #5C4033; 
+    border-radius: 10px;
+    background-color: #F0D8A8; 
+    box-shadow: 0px 0px 15px #C4A35A; 
+}
+
+h1 {
+    font-family: 'Uncial Antiqua', serif;
+    font-size: 28px;
+    color: #2B1B0F; 
+    text-shadow: 2px 2px 5px #C4A35A;
+}
+h2{
+    font-weight: 300;
+    font-size:18px;
+}
+
+.hidden-word {
+    font-size: 35px;
+    letter-spacing: 8px;
+    margin: 20px 0;
+    color: #2B1B0F; 
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.lives, .used-letters {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5C4033;
+}
+
+input {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    width: 50px;
+    border: 2px solid #5C4033;
+    border-radius: 5px;
+    background-color: #F0D8A8;
+    color: #2B1B0F;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    background-color: #C4A35A; 
+    color: black;
+    border: 2px solid #5C4033;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #A0793D; 
+    transform: scale(1.1);
+}
+
+.message {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.win-message {
+    color: #008000;
+    text-shadow: 0px 0px 10px #008000;
+}
+
+.lose-message {
+    color: red;
+    text-shadow: 0px 0px 10px red;
+}
+
+.warning-message {
+    color: orange;
+}
