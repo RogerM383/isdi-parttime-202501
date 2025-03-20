@@ -33,16 +33,62 @@ function createContainer(tag, style){
     return container;
 }
 
-/*Renderizar la página de registro y limpia la vista anterior*/
+function createForm(inputsArray, submitButtonText){
+    var formContainer = createContainer('form', ''); 
+    for (var i = 0; i < inputsArray.length; i++){
+        var input = inputsArray[i];
+        var label = document.createElement('label');
+        label.htmlFor = input.inputId;  
+        label.textContent = input.label; 
+        var inputElement = document.createElement('input');
+        inputElement.type = input.inputType;
+        inputElement.placeholder = input.placeholder;
+        inputElement.id = input.inputId;
+
+        appendChildren(formContainer, label, inputElement);
+    }
+    var SubmitButton = document.createElement('input');
+    SubmitButton.type = 'submit';
+    SubmitButton.value = submitButtonText;
+
+    formContainer.appendChild(SubmitButton);
+
+    formContainer.addEventListener('submit', function (event) {
+        event.preventDefault(); 
+
+        var form = event.target; // .target para un evento submit es el formulario
+        var formData = [];
+
+        for (var i = 0; i < inputsArray; i++){
+            var fieldName = inputsArray[i].inputId;
+            var value = form[inputsArray[i].inputId].value;
+            var inputData = {fieldName, value};
+        } 
+        alert('Registrado'); 
+    })
+    return formContainer;
+} 
+
+
+/* Crea la vista Register */
+function createRegisterPage(){
+    var registerContainer = createContainer('div','');
+    var registerTitle = createTextContainer('h1', 'Register', 'title');
+    var objectEmail = {label: 'Email', inputType: 'email', placeholder: 'my@email.com', inputId: 'email'};
+    var objectPassword = {label: 'Password', inputType: 'password', placeholder: '*******', inputId: 'password'};
+    
+    var registerForm = createForm([objectEmail, objectPassword], 'Register');
+    
+    var toLoginButton = createButton('Go to login', 'button_main', function(){ navigateToLogin(view); });
+    var view  = appendChildren(registerContainer, registerTitle, registerForm, toLoginButton);
+
+    return view
+}
+
+/*Crea la nueva vista y limpia la vista anterior*/
 function navigateToRegister(previousView){
-   var registerContainer = createContainer('div','');
-   var registerTitle = createTextContainer('h1', 'Register', 'title');
-   var registerButton = createButton('Register', 'button_main', function(){ alert('Registrdo'); });
-   var toLoginButton = createButton('Go to login', 'button_main', function(){ navigateToLogin(registerContainer); });
-
-   var registerView  = appendChildren(registerContainer, registerTitle, registerButton, toLoginButton);
-   body.replaceChild(registerContainer, previousView);
-
+   var registerView = createRegisterPage();   
+   body.replaceChild(registerView, previousView);
 }
 
 /*Renderizar la página de login y limpia la vista anterior*/
